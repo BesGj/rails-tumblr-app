@@ -2,9 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.post_wrapper {
+.index {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  justify-content: space-around;
 
+
+
+}
+
+.a {
+  margin-right: 10px;
 }
