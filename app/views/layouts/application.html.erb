@@ -10,6 +10,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar navbar-light" style="background-color: #e3f2fd;">
+          <a class="navbar-brand" href="#">Post Feed </a>
+            <span class="navbar-text">
+              <%= link_to "Make Post", new_post_path %>
+            </span>
+          </div>
+        </nav>
+      <%= yield %>
+    </div>
+
   </body>
 </html>
