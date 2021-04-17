@@ -1,19 +1,22 @@
-<h1>Make something</h1>
+<div class="container">
+
+  <h1 style="margin-top: 20px; color: #00b894">Make a New Post</h1>
 
 
-<%= form_for :post, url: posts_path do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+  <%= form_for :post, url: posts_path do |f| %>
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </p>
 
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
+    <p>
+      <%= f.label :body %><br>
+      <%= f.text_area :body %>
+    </p>
 
-  <p>
-    <%= f.submit %>
+    <p>
+      <%= f.submit %>
 
-  </p>
-<% end %>
+    </p>
+  <% end %>
+</div>
