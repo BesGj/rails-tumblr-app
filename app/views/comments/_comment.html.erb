@@ -4,6 +4,7 @@
     <p class="comment-body">Content: <%= comment.body %></p>
     <p class="comment-title">Date: <%= time_ago_in_words(comment.created_at) %> ago</p>
   </div>
-
+  <% if user_signed_in?  %>
   <p><%= link_to 'Delete', [comment.post, comment], method: :delete, class: "btn btn-danger", date: { confirm: "Are you sure" } %></p>
+  <% end  %>
 </div>

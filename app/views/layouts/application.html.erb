@@ -12,10 +12,17 @@
   <body>
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-          <a class="navbar-brand" href="#"><%= link_to "Post Feed", posts_path %> </a>
+          <a class="navbar-brand" href="#"><%= link_to "Post Feed", posts_path, class:"btn btn-info mx-2" %> </a>
             <span class="navbar-text">
-              <%= link_to "Make Post", new_post_path %>
-              <%= link_to "About", about_path %>
+              <% if user_signed_in? %>
+                    <%= link_to "Make Post", new_post_path, class:"btn btn-info mx-2" %>
+                    <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn btn-danger mx-2" %>
+                    <%= link_to "About", about_path, class:"btn btn-info" %>
+              <%end  %>
+              <% if !user_signed_in? %>
+
+              <%= link_to "Sign in", new_user_session_path, class:"btn btn-info mx-2"%>
+              <% end  %>
             </span>
           </div>
         </nav>
@@ -31,7 +38,12 @@
               <% end  %>
             </div>
         </div>
-      <%= yield %>
+        <div class="container">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
+         <%= yield %>
+         </div>
     </div>
 
   </body>

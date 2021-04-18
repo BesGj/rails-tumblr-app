@@ -1,3 +1,4 @@
+ <% if user_signed_in?  %>
 <%= form_for ([ @post, @post.comments.build ]) do |f| %>
   <p>
     <%= f.label :name %><br>
@@ -9,5 +10,7 @@
     <%= f.text_area :body %>
   </p>
   <br>
+
   <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
 <% end %>
